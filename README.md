@@ -22,4 +22,29 @@ npm install
 cp .env.local.example .env.local
 ```
 
-Ouvre `.env.local` et colle ta clé :
+Ouvre `.env.local` et colle ta clé : SERPER_API_KEY=ta_cle_ici
+
+Puis lance le serveur de développement :
+
+```bash
+npm run dev
+```
+
+Ouvre http://localhost:3000 dans ton navigateur, tape un mot-clé, clique sur "Analyser la SERP".
+
+## 3. Déployer sur Vercel
+
+1. Pousse ce projet sur GitHub.
+2. Va sur https://vercel.com, connecte-toi avec ton compte GitHub.
+3. Clique "Add New… → Project", sélectionne le dépôt.
+4. Avant de cliquer "Deploy", ouvre "Environment Variables" et ajoute :
+   - Nom : `SERPER_API_KEY`
+   - Valeur : ta clé Serper.dev
+5. Clique "Deploy".
+
+## Limites connues de cette V1
+
+- **Scraping bloqué sur certains sites.** Certains sites bloquent les requêtes automatisées. Ces
+  pages apparaissent en "pages ignorées" dans l'interface.
+- **Regroupement par concept approximatif**, sans IA (rule-based).
+- **Quota Serper.dev.** 2 500 recherches offertes une seule fois à l'inscription.
